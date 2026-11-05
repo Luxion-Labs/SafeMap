@@ -71,6 +71,10 @@ Users describe what they saw in their own words and their own language. Gemini p
 
 SafeMap combines a privacy-first data pipeline with AI-powered natural language understanding. The anonymisation layer runs before any data is written to disk, while Gemini handles all interpretation of what was reported, where the risk clusters are, and what the community should know.
 
+<details>
+<summary><b>Expand AI & Technical Approach Details</b></summary>
+<br/>
+
 ```
 User submits free-text report + map pin
            │
@@ -120,6 +124,9 @@ Hotspot aggregation (GET /api/hotspots)
 
 ---
 
+<br/>
+</details>
+
 ## Features
 
 | Feature | What it does |
@@ -135,6 +142,10 @@ Hotspot aggregation (GET /api/hotspots)
 | Demo Mode | Pre-loaded US city data for instant presentations with no API key |
 | Mobile-first UI | Responsive TailwindCSS layout built for phones and tablets |
 | Production-ready deploy | Vercel (frontend) + Render (backend) configs included |
+
+<details>
+<summary><b>Expand Features Details</b></summary>
+<br/>
 
 ### Anonymous Incident Reporting
 
@@ -210,6 +221,9 @@ Enable with `USE_DUMMY_DATA=true` in `backend/.env`.
 
 ---
 
+<br/>
+</details>
+
 ## Technology Stack
 
 | Technology | Purpose | Key file(s) |
@@ -230,35 +244,22 @@ Enable with `USE_DUMMY_DATA=true` in `backend/.env`.
 | Vercel | Frontend CDN and edge hosting | `frontend/vercel.json` |
 | Render | Backend cloud hosting | `backend/render.yaml` |
 
----
-
-## Installation
-
-For the fastest start, see **[SETUP.md](./SETUP.md)**  -  it covers both Demo Mode (no API key, up in 2 minutes) and Live Mode (full Gemini-powered setup).
-
-**Quick start  -  Demo Mode**
-
-```bash
-git clone https://github.com/Invariants0/safemap.git
-cd safemap
-
-# Backend
-cd backend && cp .env.example .env   # set USE_DUMMY_DATA=true
-uv sync
-uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-
-# Frontend (new terminal)
-cd frontend && cp .env.example .env  # set VITE_API_URL=http://localhost:8000
-bun install && bun run dev
-```
-
-Open `http://localhost:5173`  -  the map loads immediately with 7 US city hotspots. 
+<details>
+<summary><b>Expand Technology Stack Details</b></summary>
+<br/>
 
 ---
+
+<br/>
+</details>
 
 ## API Reference
 
 Full interactive docs available at `http://localhost:8000/docs` when the backend is running.
+
+<details>
+<summary><b>Expand API Reference Details</b></summary>
+<br/>
 
 ### `POST /api/report`
 
@@ -310,6 +311,9 @@ Health check.
 
 ---
 
+<br/>
+</details>
+
 ## Usage
 
 1. Open the app and click **"Report Incident"**.
@@ -326,6 +330,10 @@ Health check.
 
 SafeMap is built around the principle that safety reporting should never require a privacy trade-off.
 
+<details>
+<summary><b>Expand Privacy & Security Details</b></summary>
+<br/>
+
 - **No raw text stored**  -  original descriptions are processed by Gemini and then discarded.
 - **Coordinate fuzzing**  -  a 50 - 100 m random offset is applied to every location before storage.
 - **No authentication**  -  there are no accounts, sessions, or cookies.
@@ -335,9 +343,16 @@ SafeMap is built around the principle that safety reporting should never require
 
 ---
 
+<br/>
+</details>
+
 ## Deployment
 
 Full deployment instructions are in **[SETUP.md](./SETUP.md)**. In brief:
+
+<details>
+<summary><b>Expand Deployment Details</b></summary>
+<br/>
 
 **Backend → Render**
 
@@ -362,6 +377,9 @@ Vercel auto-detects Vite. Build command: `bun run build`. Output: `dist/`.
 
 ---
 
+<br/>
+</details>
+
 ## Technical Highlights
 
 | Metric | Detail |
@@ -373,11 +391,22 @@ Vercel auto-detects Vite. Build command: `bun run build`. Output: `dist/`.
 | Demo data | 92 realistic incidents across 7 major US cities |
 | Zero dependencies for demo | Full map + insights with `USE_DUMMY_DATA=true`, no API key |
 
+<details>
+<summary><b>Expand Technical Highlights Details</b></summary>
+<br/>
+
 ---
+
+<br/>
+</details>
 
 ## Roadmap
 
 SafeMap is structured for richer AI analysis, broader deployment, and stronger community tooling.
+
+<details>
+<summary><b>Expand Roadmap Details</b></summary>
+<br/>
 
 ### Short Term
 
@@ -401,6 +430,9 @@ SafeMap is structured for richer AI analysis, broader deployment, and stronger c
 
 ---
 
+<br/>
+</details>
+
 ## Project Structure
 
 ```
@@ -413,18 +445,20 @@ SafeMap/
 └── CONTRIBUTING.md # Branching, commit style, and contribution guide
 ```
 
+<details>
+<summary><b>Expand Project Structure Details</b></summary>
+<br/>
+
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full annotated tree and ASCII data-flow diagram.
 
 ---
 
+<br/>
+</details>
+
 ## Contributing
 
 Contributions are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, branching, commit conventions, and the list of areas we most need help with (DBSCAN clustering, tests, accessibility, i18n).
-
----
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
@@ -450,6 +484,3 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ## Maintainer Response SLA
 Luxion Labs enforces a strict 24-hour response SLA on all community issues, feature proposals, and pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for full development guidelines.
-
-## License
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
