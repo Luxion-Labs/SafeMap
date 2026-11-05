@@ -1,54 +1,23 @@
-# 🤝 Contributing
+# Contributing to Luxion Labs
 
-We welcome contributions! Here's how to get started:
+Thank you for your interest in contributing. We welcome issues, documentation improvements, and pull requests.
 
-## Development Setup
+## Maintainer Response SLA
+We maintain an explicit 24-hour response SLA on all newly opened issues and pull requests. Every contribution will be acknowledged, triaged, or reviewed within 24 hours.
 
-```bash
-# 1. Fork the repository
-# 2. Clone your fork
-git clone https://github.com/Invariants0/SafeMap.git
+## Development Workflow
+1. Fork the repository and create your feature branch: `git checkout -b feat/your-feature-name`.
+2. Install dependencies according to the README instructions.
+3. Run tests locally and verify builds succeed before submitting changes.
+4. Commit your changes with clear, semantic commit messages (e.g. `feat: add telemetry module` or `fix: resolve auth crash`).
+5. Ensure zero emojis and zero em dashes are introduced in code comments or documentation.
+6. Push to your branch and submit a Pull Request.
 
-# 3. Set up the backend
-cd backend
-cp .env.example .env        # add your GEMINI_API_KEY (or set USE_DUMMY_DATA=true)
-uv sync
-uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+## Pull Request Requirements
+- Provide a clear description of the problem solved and test coverage added.
+- Verify all CI checks pass.
+- Maintain atomic, logical commits.
+- Ensure no sensitive credentials, temporary test scripts, or intermediate build files are tracked.
 
-# 4. Set up the frontend (new terminal)
-cd frontend
-cp .env.example .env        # set VITE_API_URL=http://localhost:8000
-bun install
-bun run dev
-
-# 5. Create a feature branch
-git checkout -b feature/your-feature-name
-
-# 6. Make your changes and test thoroughly
-
-# 7. Commit with clear messages
-git commit -m "feat: add amazing feature"
-
-# 8. Push to your fork
-git push origin feature/your-feature-name
-
-# 9. Open a Pull Request against main
-```
-
-## Contribution Guidelines
-
-- **Code Style:** Follow PEP 8 + ruff for Python, ESLint for TypeScript
-- **File Naming:** Python files use `camelCase.py` (e.g. `hotspotService.py`)
-- **Documentation:** Update README or ARCHITECTURE if your change affects setup or data flow
-- **Testing:** Test in both Live mode (`USE_DUMMY_DATA=false`) and Demo mode (`USE_DUMMY_DATA=true`)
-- **Commits:** Use conventional commit messages (`feat:`, `fix:`, `docs:`, `refactor:`)
-- **Secrets:** Never commit `.env` files or API keys
-- **Issues:** Check existing issues before opening a new one
-
-## Areas for Contribution
-
-- 🐛 **Bug fixes** — help us squash bugs
-- ✨ **New features** — implement awesome new features
-- 📚 **Documentation** — improve guides and examples
-- 🎨 **UI/UX** — enhance the map and mobile experience
-- 🌍 **Internationalisation** — add multi-language support
+## Code of Conduct
+Be constructive, professional, and respectful. We foster a collaborative, high-velocity engineering standard across all Luxion Labs projects.
